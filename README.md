@@ -200,7 +200,10 @@ In this table necessary values to specifie are `user_id`, `excersise_id`, `times
 
 ### Relationships
 
-![ER Diagram](<Database ER diagram (crow's foot) (4)-1.jpeg>)
+<figure>
+<img src="ER.jpeg" style="width:100%">
+<center>ER Diagram of this database</center>
+</figure>
 
 
 As detailed by the diagram:
