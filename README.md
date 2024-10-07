@@ -197,14 +197,12 @@ The `wall` table includes:
 
 In this table necessary values to specifie are `user_id`, `excersise_id`, `timestamp`, `weight`, `reps`. To these collumns `NOT NULL` constraint has been applied with exception of `user_id` and `excersise_id`, cause `FOREIGN_KEY` constraint already has `NOT NULL` constraint in it.
 
-
 ### Relationships
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/4b9124a3-89ce-434e-98a0-fe05d140a625">
+<img src="https://github.com/user-attachments/assets/a0fdc3d2-2d36-4819-8d78-3d9cc45ad746">
 <p>ER Diagram of this database</p>
 </div>
-
 
 As detailed by the diagram:
 
