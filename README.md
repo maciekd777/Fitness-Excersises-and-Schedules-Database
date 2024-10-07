@@ -2,6 +2,14 @@
 
 A simple database for storing data about fitness excersises, schedules, and users reviews. Schema of this database is written in `schema.sql` file, and `queries.sql` contains queries that would probably be the most frequently used on this database.
 
+## Authors
+
+- [@maciekd777](https://github.com/maciekd777)
+
+## Tech Stack
+
+**Database management:** SQL
+
 ## Scope
 
 This database includes entities that enable easy searching through list of excersises, creating your own workout schedules, following others schedules and saving your results. Included in this database's scope is:
