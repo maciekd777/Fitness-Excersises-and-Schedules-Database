@@ -275,3 +275,7 @@ To ensure that all excersises and schedules scores will be fair, the following t
 
 Every excersise can involve one and only one piece of equipment and machine. If an excersise would involve, for example, dumbbells and a resistance band, it could be associated with only one of these. There is also no possible way for a user to save a schedule
 that he liked from beying deleted. If a user that created the schedule would be deleted, schedules that he created would also be deleted, despite other users that added it to favorites and posiibly are following it.
+
+## Badges
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
