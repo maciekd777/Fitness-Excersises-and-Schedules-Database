@@ -200,7 +200,7 @@ In this table necessary values to specifie are `user_id`, `excersise_id`, `times
 ### Relationships
 
 <div align="center">
-<img src="https://github.com/user-attachments/assets/a0fdc3d2-2d36-4819-8d78-3d9cc45ad746">
+<img width=60% src="https://github.com/user-attachments/assets/a0fdc3d2-2d36-4819-8d78-3d9cc45ad746">
 <p>ER Diagram of this database</p>
 </div>
 
