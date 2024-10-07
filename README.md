@@ -1,6 +1,6 @@
-# Design Document
+# Fitness Excersises Database
 
-By Maciej Dombrowski
+A simple database for storing data about fitness excersises, schedules, and users reviews. Schema of this database is written in `schema.sql` file, and `queries.sql` contains queries that would probably be the most frequently used on this database.
 
 ## Scope
 
@@ -200,10 +200,10 @@ In this table necessary values to specifie are `user_id`, `excersise_id`, `times
 
 ### Relationships
 
-<figure>
-<img src="ER.jpeg" style="width:100%">
-<center>ER Diagram of this database</center>
-</figure>
+<div align="center">
+<img src="https://github.com/user-attachments/assets/4b9124a3-89ce-434e-98a0-fe05d140a625">
+<p>ER Diagram of this database</p>
+</div>
 
 
 As detailed by the diagram:
@@ -222,8 +222,6 @@ As detailed by the diagram:
 * A user can write zero, one or many schedules reviews, but every schedule review can be written by one and only one user
 * A user can write zero, one or many responses to schedules reviews and every schedule review can also have zero, one or many different responses to it
 * A user can have zero, one or many different entries in the `wall` table (users history of excersises performed), but every entry can be associated with one and only one user.
-
-
 
 ## Optimizations
 
