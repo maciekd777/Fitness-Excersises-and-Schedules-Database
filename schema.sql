@@ -189,27 +189,50 @@ CREATE TABLE "wall" (
 
 CREATE VIEW "top_excersises"
 AS
-SELECT "excersises"."name" AS "name", ROUND(AVG("excersises_reviews"."score"), 2) AS "avg_rating", COUNT("excersises_reviews"."user_id") AS "numb_of_votes",
-"muscle_areas"."name" AS "primary_muscle_area_worked", "equipment"."name" AS "equipment_used", "machines"."name" AS "machine_used"
+SELECT 
+	"excersises"."name" AS "name", 
+	ROUND(AVG("excersises_reviews"."score"), 2) AS "avg_rating", 
+	COUNT("excersises_reviews"."user_id") AS "numb_of_votes",
+	"muscle_areas"."name" AS "primary_muscle_area_worked", 
+	"equipment"."name" AS "equipment_used", 
+	"machines"."name" AS "machine_used"
 FROM "excersises"
 JOIN "excersises_reviews" ON "excersises_reviews"."excersise_id" = "excersises"."id"
 JOIN "muscle_areas" ON "muscle_areas"."id" = "excersises"."primary_muscle_area_id"
 JOIN "equipment" ON "equipment"."id" = "excersises"."equipment_id"
 JOIN "machines" ON "machines"."id" = "excersises"."machine_id"
 GROUP BY "excersises_reviews"."excersise_id"
-ORDER BY "avg_rating" DESC, "numb_of_votes" DESC, "primary_muscle_area_worked" DESC, "equipment_used" DESC, "machine_used" DESC, "name" DESC
+ORDER BY 
+	"avg_rating" DESC, 
+	"numb_of_votes" DESC, 
+	"primary_muscle_area_worked" DESC, 
+	"equipment_used" DESC, 
+	"machine_used" DESC, 
+	"name" DESC
 LIMIT 20;
 
 
 
 CREATE VIEW "top_schedules"
 AS
-SELECT "name", ROUND(AVG("like"), 2) AS "rating", COUNT("schedules_reviews"."user_id") AS "numb_of_votes",  "goal", "difficulty_level", "intensity_level", "time_consume_level"
+SELECT 
+	"name", 
+	ROUND(AVG("like"), 2) AS "rating", 
+	COUNT("schedules_reviews"."user_id") AS "numb_of_votes",  
+	"goal", 
+	"difficulty_level", 
+	"intensity_level", 
+	"time_consume_level"
 FROM "schedules"
 JOIN "schedules_reviews" ON "schedules"."id" = "schedules_reviews"."schedule_id"
 GROUP BY "schedules"."id"
 HAVING "private" = FALSE
-ORDER BY "rating" DESC, "numb_of_votes" DESC, "difficulty_level" ASC, "time_consume_level" ASC, "intensity_level" ASC
+ORDER BY 
+	"rating" DESC, 
+	"numb_of_votes" DESC, 
+	"difficulty_level" ASC, 
+	"time_consume_level" ASC, 
+	"intensity_level" ASC
 LIMIT 20;
 
 
@@ -230,10 +253,11 @@ CREATE INDEX "schedules_time_consume" ON "schedules"("time_consume_level");
 
 CREATE TRIGGER "excersise_review_duplicate"
 BEFORE INSERT ON "excersises_reviews"
-WHEN NEW."excersise_id" IN (
+WHEN 
+	NEW."excersise_id" IN (
 	SELECT "excersise_id" FROM "excersises_reviews"
 	WHERE "user_id" = NEW."user_id"
-)
+	)
 BEGIN
 	DELETE FROM "excersises_reviews" WHERE "excersise_id" = NEW."excersise_id" AND "user_id" = NEW."user_id";
 END;
@@ -244,7 +268,7 @@ BEFORE INSERT ON "schedules_reviews"
 WHEN NEW."schedule_id" IN (
 	SELECT "schedule_id" FROM "schedules_reviews"
 	WHERE "user_id" = NEW."user_id"
-)
+	)
 BEGIN
 	DELETE FROM "schedules_reviews" WHERE "schedule_id" = NEW."schedule_id" AND "user_id" = NEW."user_id";
 END;
